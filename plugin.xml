@@ -1,0 +1,28 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-local-navigation"
+        version="0.0.2"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <name>local navigation</name>
+
+    <engines>
+        <engine name="cordova" version=">=3.4.0" />
+    </engines>
+
+    <js-module name="localNavigation" src="www/cordova-plugin-local-navigation.js">
+        <clobbers target="localNavigation" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="LocalNavigation" >
+                <param name="android-package" value="com.sucsoft.navigation.LocalNavigation"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/Navigation.java" target-dir="src/com/sucsoft/navigation" />
+        <source-file src="src/android/LocalNavigation.java" target-dir="src/com/sucsoft/navigation" />
+    </platform>
+</plugin>

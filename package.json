@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-local-navigation",
+  "version": "0.0.2",
+  "description": "Input your plugin's description!",
+  "cordova": {
+    "id": "cordova-plugin-local-navigation",
+    "platforms": [
+      "android"
+    ]
+  }
+}
