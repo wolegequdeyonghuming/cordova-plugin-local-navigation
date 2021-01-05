@@ -8,11 +8,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static org.xwalk.core.extension.JsStubGenerator.TAG;
-
 public class LocalNavigation extends CordovaPlugin {
 
-	private static String ACTION = "navigation";
+	final static String TAG = "local_navigation";
+	final static String ACTION = "navigation";
+	final static String CHECK = "check";
 	private String navType = "auto";
 	private String lng = "";
 	private String lat = "";
@@ -22,6 +22,12 @@ public class LocalNavigation extends CordovaPlugin {
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
 		Navigation nav = new Navigation(cordova.getActivity());
+
+		if(action.equals(CHECK)){
+			callbackContext.success(nav.checkInstalledApk());
+			return true;
+		}
+
 		/** action */
 		if(!action.equals(ACTION)){
 			return false;

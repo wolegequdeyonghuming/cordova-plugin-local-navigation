@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.util.List;
 
 class Navigation {
@@ -64,5 +67,16 @@ class Navigation {
             }
         }
         return false;
+    }
+
+    String checkInstalledApk(){
+        String str = "";
+        if(isInstallApk(context, "com.autonavi.minimap")){
+            str += "amap";
+        }
+        if(isInstallApk(context, "com.baidu.BaiduMap")){
+            str += "baidu";
+        }
+        return str;
     }
 }

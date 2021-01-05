@@ -15,6 +15,14 @@ what i do is modify it into cordova plugin.
            })
    ```
 
+
+   ```
+   localNavigation.check(function(successCallback){
+        alert(successCallback);
+    }, function(e){
+        alert(e);
+    })
+   ```
 * type:
     > default by 'auto', can be as: 'amap', 'baidu', 'web'.
 
@@ -23,3 +31,6 @@ what i do is modify it into cordova plugin.
 
 * myLng & myLat:
     > is needed when using 'web' navigation. thus, when using 'auto', by considering of the 'web' situation, it's better not be null.
+
+* check:
+    > 4 results can be return: "amap", "baidu", "amapbaidu", ""

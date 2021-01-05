@@ -43,6 +43,16 @@ var localNavigation = {
             'navigation',
             [params]
         )
+    },
+
+    check: function(successCallback, errorCallback){
+        exec(
+            successCallback,
+            errorCallback,
+            'LocalNavigation',
+            'check',
+            [{}]
+        )
     }
 }
 
